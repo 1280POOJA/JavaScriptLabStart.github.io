@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="Lab07.css" rel="stylesheet">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <script src="script.js"></script>
+        <title>Calculator</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Lab 7: JavaScript Arithmetic Operator</h1>
+        </header>
+        <section>
+            <form  class="form" name="mycalculator" action='' method='GET'>
+                <fieldset>
+                    <legend>My calculator</legend>
+                    <!-- textarea to show result -->
+                    <textarea name="output" rows="3" cols="40" rows="6" id="result"></textarea>
+                </fieldset>
+
+                <!-- second fieldset -->
+                <fieldset>
+                    <legend>Input</legend>
+                    <label for="operands">Operands:</label>
+                    <input type="number" name="input_A" id="input_a" size="3" maxlength="3" >
+                    <input type="number" name="input_B" id="input_b" size="3" maxlength="3" >
+                    <br><br>
+
+                    <label for="operator">Operator:</label>
+                    <button id="addition">+</button>
+                    <button id="multiplication">&times;</button>
+                    <button id="division">!</button>
+                    <!-- reset clear button -->
+                    <input type="reset" value="clear" id="clr">
+                
+                </fieldset>
+            </form>
+            
+           <script> 
+                document.getElementById("addition").addEventListener('click', function(e) {
+                    e.preventDefault();
+                
+                    // get value of first operand and assign to a variable
+                    let input_aValue = document.getElementById("input_a").value;
+                    //get value of second operand and assign to a variable
+                    let input_bValue = document.getElementById("input_b").value;
+                
+                    //calculate sum
+                    let sumValue = Number(input_aValue) + Number(input_bValue);
+                
+                    //display sum result in textarea with operands values-
+                    document.querySelector("textarea").value =`${input_aValue} + ${input_bValue} = ${sumValue}`;
+                });
+                
+                document.getElementById("multiplication").addEventListener('click', function(e) {
+                    e.preventDefault();
+                
+                    // get value of first operand and assign to a variable
+                    let input_aValue = document.getElementById("input_a").value;
+                    //get value of second operand and assign to a variable
+                    let input_bValue = document.getElementById("input_b").value;
+                    //calculate multiplication
+                  let multiplicationValue = input_aValue * input_bValue;
+                    document.querySelector("textarea").value = `${input_aValue} * ${input_bValue} = ${multiplicationValue}`;
+                });
+                
+                document.getElementById("division").addEventListener('click', function(e) {
+                    e.preventDefault();
+                
+                    // get value of first operand and assign to a variable
+                    let input_aValue = document.getElementById("input_a").value;
+                    //get value of second operand and assign to a variable
+                    let input_bValue = document.getElementById("input_b").value;
+                    //calculate division
+                  let divisionValue = input_aValue / input_bValue;
+                    document.querySelector("textarea").value = `${input_aValue} / ${input_bValue} = ${divisionValue}`;
+                });
+                
+                
+                
+                </script> 
+
+                <footer>
+                    
+                </footer>
+                
+        
+    </body>
+</html>

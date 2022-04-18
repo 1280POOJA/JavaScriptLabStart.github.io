@@ -1,0 +1,31 @@
+input{
+    margin: 5px 0;
+}
+fieldset{
+    width: 400px;
+    padding: 1.5rem;
+    background-color:lightsteelblue;
+    margin: 1rem;
+}
+
+legend{
+    background-color: slategray;
+    padding: 2px 8px;
+    color: whitesmoke;
+    font-weight: 400;
+}
+
+#input_a, #input_b {
+    width: 110px;
+}
+
+/* style rule for operator buttons */
+button:first-of-type {
+margin-left: 5px;
+cursor: pointer:
+}
+
+button:not(first-of-type), #clr {
+    margin-left: 6px;
+    cursor: pointer;
+}
